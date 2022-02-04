@@ -9,7 +9,7 @@ print("Current OS variables as seen by Python3 (%s)" % platform.python_version()
 
 print('USER:                %s' % getpass.getuser())
 print('TIME:                %s' % datetime.fromtimestamp(psutil.boot_time()))
-
+ 
 print('MAC:                 %s' % get_mac())
 print('IP:                  %s' % socket.gethostbyname(socket.getfqdn()))
 
@@ -32,6 +32,15 @@ except:
 
 
 #os.system("cmd.exe")
-print('Fuck')
+print('\nplatform:')
+print('\tnode        :     %s' % platform.node() )
+print('\tmachine     :     %s' % platform.machine() )
+print('\tprocessor   :     %s' % platform.processor() )
+print('\tsystem      :     %s' % platform.system() )
+print('\trelease     :     %s' % platform.release() )
+print('\tversion     :     %s' % platform.version() )
+print('\tplatform    :     %s' % platform.platform() )
+print('\tuname (6)   : {}'.format(platform.uname()) )                   # (system, node, release, version, machine) # not processor
+print('\tarchitecture (2):  (%s,%s)' % platform.architecture() )        # (bits, linkage)
 
 screen = pyautogui.screenshot("screenshot.jpg") # Снятие скриншота
